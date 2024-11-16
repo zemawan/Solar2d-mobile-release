@@ -3,7 +3,7 @@ Many people want to create apps and games, but don't have a computer. Soladroid 
 Solar2d is a simple and powerful 2D game engine, its PC version: https://github.com/coronalabs/corona/releases
 
 ## Builder
-Soladroid allows you to build your project in apk (Android) and Exe (Windows). Please note, native plugins do not work for Windows builds.
+Solar allows you to build your project in apk (Android) and Exe (Windows). Please note, native plugins do not work for Windows builds.
 
 ## Plugins
 To create a native plugin for android, open the "__plugins__" folder in the root directory of the project (If it is not there, create it), create a new folder (Its name is the name of your plugin). Create 3 folders inside - java, libs, jniLibs.
