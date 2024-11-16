@@ -119,3 +119,8 @@ Download "projectTemplate.zip", move to the desired folder, unzip and try to ass
 - build.settings -
 - config.lua project settings - Height/width (NOT TO BE CONFUSED WITH WIDTH AND HEIGHT FROM BUILD.SETTINGS), fps, scaling method
 - __plugins__ - Discussed in the last paragraph
+
+## Additional details: 
+- To build the apk, go to the desired directory and click on the Android icon in the upper right corner. 
+- To build the exe, click on the icon next to the android icon.
+- Initially, the application version is installed as 1, the package as com.the name (Folder name), and the display name as the folder name. You can copy from github AndroidManifest.xml , add to the main directory of the project and install the tinctures you need there. (The package changes in 3 places, not just at the beginning. Find all the places with SLONOAPP_PACKAGE)
