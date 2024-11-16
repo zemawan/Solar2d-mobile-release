@@ -1,4 +1,4 @@
-# Soladroid - android version Solar2d
+# Solar - android version Solar2d
 Many people want to create apps and games, but don't have a computer. Soladroid was created especially for them as a transfer of the "Solar2d" engine (Corona SDK) to mobile devices with the ability to make exe and apk files.
 Solar2d is a simple and powerful 2D game engine, its PC version: https://github.com/coronalabs/corona/releases
 
