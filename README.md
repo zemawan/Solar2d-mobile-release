@@ -124,3 +124,46 @@ Download "projectTemplate.zip", move to the desired folder, unzip and try to ass
 - To build the apk, go to the desired directory and click on the Android icon in the upper right corner. 
 - To build the exe, click on the icon next to the android icon.
 - Initially, the application version is installed as 1, the package as com.the name (Folder name), and the display name as the folder name. You can copy from github AndroidManifest.xml , add to the main directory of the project and install the tinctures you need there. (The package changes in 3 places, not just at the beginning. Find all the places with SLONOAPP_PACKAGE)
+
+### Paxkage location in manifest
+- Line 9
+- Line 211
+- Line 217
+
+## Examples
+### Watch in solar
+```lua
+local centerX = display.contentCenterX
+local centerY = display.contentCenterY
+local width = display.actualContentWidth
+local height = display.actualContentHeight
+
+local bg = display.newImage("bg.jpeg", centerX, centerY)
+bg.width = width
+bg.height = height
+
+local timeText = display.newText({
+    text = "00:00:00",
+    x = centerX,
+    y = centerY,
+    font = native.systemFont,
+    fontSize = 48
+})
+
+local function updateTime()
+    local currentTime = os.time()
+    local hours = os.date("%H", currentTime)
+    local minutes = os.date("%M", currentTime)
+    local seconds = os.date("%S", currentTime)
+
+    timeText.text = string.format("%02d:%02d:%02d", hours, minutes, seconds)
+    -- timeText.text = lib.jopa
+end
+
+local function onEnterFrame(event)
+    updateTime()
+end
+
+Runtime:addEventListener("enterFrame", onEnterFrame)
+updateTime()
+```
