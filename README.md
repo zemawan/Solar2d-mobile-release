@@ -1,5 +1,5 @@
 # Solar - android version Solar2d
-Many people want to create apps and games, but don't have a computer. Soladroid was created especially for them as a transfer of the "Solar2d" engine (Corona SDK) to mobile devices with the ability to make exe and apk files.
+Many people want to create apps and games, but don't have a computer. solar was created especially for them as a transfer of the "Solar2d" engine (Corona SDK) to mobile devices with the ability to make exe and apk files.
 Solar2d is a simple and powerful 2D game engine, its PC version: https://github.com/coronalabs/corona/releases
 
 ## Builder
@@ -167,3 +167,52 @@ end
 Runtime:addEventListener("enterFrame", onEnterFrame)
 updateTime()
 ```
+
+# Русская версия
+Далее идёт русская версия README
+
+# Solar - мобильная версия Solar2d
+Многие люди хотят создавать приложения и игры, но у них нет компьютера. Solar был создан специально для них как перенос движка "Solar2d" (Corona SDK) на мобильные устройства с возможностью создания exe и apk файлов. Solar2d — это простой и мощный 2D игровой движок, его версия для ПК: https://github.com/coronalabs/corona/releases
+
+# Сборщик
+Solar позволяет вам собирать ваш проект в apk (Android) и Exe (Windows). Обратите внимание, что нативные плагины не работают для сборок Windows.
+
+# Плагины
+Чтобы создать нативный плагин для Android, откройте папку "plugins" в корневом каталоге проекта (если ее нет, создайте), создайте новую папку (ее имя — это имя вашего плагина). Создайте 3 папки внутри — java, libs, jniLibs.
+
+## Java
+Здесь находится ваш java код. Создайте папку плагина, затем папку с именем вашего плагина и создайте там класс "LuaLoader.java".
+
+## Важно!
+При создании новых функций добавляйте их в LuaLoader.java.
+
+## Папка libs
+Здесь находятся jar-файлы, которые будут включены в проект. Убедитесь, что jar-файлы содержат только .class файлы!
+
+## Папка jniLibs
+Здесь нужно хранить бинарные файлы на C/C++, которые уже были скомпилированы ранее.
+
+Внутри должны быть папки:
+
+- arm64-v8a
+- armeabi-v7a
+- x86
+- x86_64
+
+Они содержат бинарные файлы с именем libNAME.so (без подпапок) где NAME это имя бинарного файла.
+
+## Как использовать?
+
+Скачайте "projectTemplate.zip", переместите в нужную папку, распакуйте и попробуйте собрать. ИЛИ создайте структуру самостоятельно:
+
+• main.lua — это код запуска вашего приложения
+• icon.png — иконка в Apk (её нет в Exe)
+• build.settings — Основные настройки сборки
+• config.lua — Настройки проекта: высота/ширина (НЕ ПУТАТЬ С WIDTH И HEIGHT ИЗ BUILD.SETTINGS), fps, метод масштабирования
+- __plugins__ — обсуждено в последнем пункте
+
+## Дополнительные детали:
+
+- Чтобы собрать apk, перейдите в нужный каталог и нажмите на иконку Android в правом верхнем углу.
+- Чтобы собрать exe, нажмите на иконку рядом с иконкой Android.
+- Изначально версия приложения устанавливается как 1, пакет как com.имя (имя папки), а отображаемое имя как имя папки. Вы можете скопировать из github файл AndroidManifest.xml, добавить его в главный каталог проекта и установить необходимые параметры там. (Пакет изменяется в 3 местах, а не только в начале.)
